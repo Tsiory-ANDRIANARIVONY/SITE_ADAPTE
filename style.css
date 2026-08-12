@@ -1,4 +1,3 @@
-/*POLICES*/
 @font-face {
     font-family: 'font2';
     src: url('Fonts/font2.ttf');
@@ -6,17 +5,6 @@
     font-style: normal;
     font-display: swap;
 }
-
-/*RESET/BASE*/
-* {
-    box-sizing: border-box;
-}
-
-html {
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -24,42 +12,23 @@ body {
     background-color: #ffffff;
     color: #0c0c0c;
     height: fit-content;
-    min-height: 100vh;
-    margin: 0;
-    overflow-x: hidden;
 }
-
-img {
-    max-width: 100%;
-}
-
-canvas {
-    max-width: 100%;
-    height: auto;
-}
-
-/*STRUCTURE GENERALE*/
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
     border: 2px solid black;
     background-color: #AEDFF7;
-    padding: 10px 15px;
-    text-align: center;
 }
 
+/*CRAMER*/
 #Conteneur {
     display: flex;
     flex-direction: row;
-    flex: 1;
 }
-
 nav {
     display: flex;
     flex-direction: column;
     background-color: #AEDFF7;
-    flex-shrink: 0;
 }
 
 ul {
@@ -67,28 +36,30 @@ ul {
     padding-left: 0;
     list-style: none;
     font-size: 21px;
+}
+
+#Conteneur1 {
     display: flex;
     flex-direction: column;
 }
 
-nav li {
-    cursor: pointer;
-    border-radius: 12px 0 0 12px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    user-select: none;
-    padding: 8px 16px;
-    white-space: nowrap;
+#Conteneur2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-nav li:hover {
-    background-color: #ffffff;
-    text-decoration: underline;
-    scale: 1.008;
+#titre {
+    display: flex;
+    height: fit-content;
 }
-
-nav li.active {
-    background-color: #ffffff;
-    text-decoration: underline;
+#Resolution {
+    margin: 20px 0 5px 0;
+}
+#ZoneA {
+    font-size: 30px;
+    color: #247BA0;
     font-weight: bold;
 }
 
@@ -98,20 +69,10 @@ nav li.active {
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    min-width: 0;
-    width: 100%;
 }
 
 #Affichage h2 {
     color: #247BA0;
-}
-
-#ZoneA {
-    font-size: 30px;
-    color: #247BA0;
-    font-weight: bold;
-    text-align: center;
 }
 
 footer {
@@ -121,28 +82,24 @@ footer {
     text-align: center;
     background-color: #AEDFF7;
     justify-content: center;
-    padding: 8px;
 }
-
-/*CRAMERS*/
-#Conteneur1 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 700px;
+nav li {
+    cursor: pointer;
+    border-radius: 12px 0 0 12px;
+    transition: border-color 0.3s ease;
+    user-select: none;
+    padding: 8px 16px;
 }
-
-#titre {
-    display: flex;
-    height: fit-content;
-    justify-content: center;
+nav li:hover {
+    background-color: #ffffff;
+    text-decoration: underline;
+    scale: 1.008;
 }
-
-#Resolution {
-    margin: 20px 0 5px 0;
-    text-align: center;
+nav li.active {
+    background-color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
 }
-
 #Formulaire {
     display: flex;
     flex-direction: column;
@@ -157,42 +114,32 @@ footer {
 }
 
 #Formulaire input {
-    width: 100%;
     padding: 10px 14px;
     font-size: 16px;
     border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    outline: none;
+    border-radius: 8px; /* Bords arrondis */
+    outline: none; /* Enlève la bordure noire par défaut du navigateur */
     background-color: #ffffff;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Animation fluide */
 }
 
+/* Effet au survol de la souris */
 #Formulaire input:hover {
     background-color: #ffffff;
     border-color: #5959c5;
 }
 
+/* Effet actif quand l'utilisateur clique DEDANS (Focus) */
 #Formulaire input:focus {
     background-color: #ffffff;
-    border-color: #247BA0;
-    box-shadow: 0 0 0 4px rgba(81, 84, 170, 0.15);
+    border-color: #247BA0; /* Couleur d'accentuation */
+    box-shadow: 0 0 0 4px rgba(81, 84, 170, 0.15); /* Halot lumineux moderne */
 }
-
 #Eq1, #Eq2, #Eq3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
     gap: 10px;
-}
-
-#Eq1 label, #Eq2 label, #Eq3 label {
-    flex-shrink: 0;
-}
-
-#Eq1 input, #Eq2 input, #Eq3 input {
-    flex: 1 1 90px;
-    min-width: 70px;
 }
 
 #RESOUDRE {
@@ -213,46 +160,42 @@ footer {
 #resultat {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     height: fit-content;
     gap: 50px;
-    justify-content: center;
 }
-
 #X1, #X2, #X3 {
     margin: 0;
     list-style: none;
 }
 
-/*IMAGES*/
-#Conteneur2 {
+/*IMAGE*/
+#zone-image {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 480px;
+    height: 310px;
+    border: 2px solid black;
+    margin: 20px;
 }
-
 #Redim-img {
     margin-top: 50px;
-    text-align: center;
 }
-
-#m-img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+#zone-image img {
     width: 100%;
-    gap: 20px;
+    height: 100%;
+    object-fit: cover;
+}
+#image {
+    display: none;
 }
 
 .controle {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+    width: 600px;
+    height: 440px;
     margin: 20px;
 }
 
@@ -264,73 +207,48 @@ footer {
 .slider .ui-slider-range {
     background: #339bcf;
 }
-
 .slider .ui-slider-handle.ui-state-default {
     border-radius: 30%;
     outline: none;
     background-color: #ffffff;
 }
-
 .slider .ui-slider-handle:active {
     background-color: #ffffff;
     border-color: #58a1c5;
 }
-
 #btn-fichier {
     user-select: none;
 }
-
 #btn-fichier:hover {
     scale: 1.03;
     text-decoration: underline;
     cursor: pointer;
 }
-
-#zone-zone-image {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    display: grid;
-    place-content: center;
-}
-
-#zone-image {
+#m-img {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 480px;
-    aspect-ratio: 480 / 310;
-    height: auto;
-    border: 2px solid black;
-    margin: 20px auto;
 }
-
-#zone-image img {
+#zone-zone-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-#image {
-    display: none;
+    display: grid;
+    place-content: center;
 }
 
 /*PANNEAU*/
 .panel-controls {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin-top: 8px;
     align-items: center;
 }
-
 .ad-panel {
-    position: relative;
     max-width: 100%;
+    position: relative;
 }
-
 .ad-layer {
     will-change: transform, opacity;
     display: flex;
@@ -343,17 +261,14 @@ footer {
     color: #247BA0;
     text-align: center;
 }
-
 .layer-img {
     width: 320px;
-    max-width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     display: block;
 }
-
 .layer-label {
     position: absolute;
     bottom: 12px;
@@ -365,29 +280,24 @@ footer {
     border-radius: 18px;
     font-weight: 700;
     letter-spacing: 0.6px;
-    white-space: nowrap;
 }
 
 .resize-controls h3 {
     margin: 0 0 8px 0;
     color: #247BA0;
 }
-
 .resize-controls label {
     font-weight: 600;
     display: block;
 }
-
 .resize-preview {
     min-height: 320px;
 }
-
 #resizeCanvas {
     background: #fff;
     border-radius: 6px;
     border: 1px dashed #ddd;
 }
-
 #resizeLayer {
     display: flex;
     align-items: center;
@@ -407,22 +317,24 @@ footer {
     transition: 0.2s;
 }
 
+/* Survol */
 #startPan:hover,
 #stopPan:hover {
     background-color: #AEDFF7;
     color: white;
 }
 
+/* Lors du clic */
 #startPan:active,
 #stopPan:active {
     background-color: #339bcf;
     color: white;
 }
-
 #intervalMs {
     width: 100px;
     height: 30px;
     padding: 0 10px;
+    box-sizing: border-box;
     border: 2px solid #339bcf;
     border-radius: 8px;
     background-color: white;
@@ -447,33 +359,20 @@ footer {
     padding-left: 15px;
 }
 
-#tableProduits {
-    width: 100%;
-}
-
 #tableProduits thead th {
     background-color: #247BA0;
     color: #ffffff;
 }
-
 #tableProduits tfoot th {
     background-color: #AEDFF7;
     color: #0c0c0c;
 }
-
 #tableProduits tbody tr:nth-child(odd) {
     background-color: #f0f8ff;
 }
-
 #tableProduits tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
-
-.dataTables_wrapper {
-    width: 100%;
-    overflow-x: auto;
-}
-
 #btnAjouter {
     cursor: pointer;
     background-color: #AEDFF7;
@@ -481,7 +380,6 @@ footer {
     border-radius: 12px;
     font-size: 13px;
 }
-
 #btnAjouter:disabled {
     background-color: #ddd;
     cursor: not-allowed;
@@ -494,11 +392,10 @@ footer {
     border-radius: 8px;
     background-color: white;
     color: #333;
-    font-size: 13px;
     cursor: pointer;
     outline: none;
+    font-size: 13px;
 }
-
 #selectDesignation:hover {
     border-color: #267fa9;
 }
@@ -512,7 +409,6 @@ footer {
     background: #339bcf;
     color: white;
 }
-
 #inputQuantite, #inputPrix {
     width: 150px;
     height: 20px;
@@ -520,19 +416,17 @@ footer {
     border-radius: 8px;
     background-color: white;
     color: #333;
-    font-size: 13px;
     outline: none;
+    font-size: 13px;
 }
 
 #inputQuantite:hover, #inputPrix:hover {
     border-color: #267fa9;
 }
-
 #inputQuantite:focus, #inputPrix:focus {
     border-color: #339bcf;
     box-shadow: 0 0 0 3px rgba(51, 155, 207, 0.2);
 }
-
 .dt-input {
     width: 150px;
     height: 25px;
@@ -540,36 +434,83 @@ footer {
     border-radius: 8px;
     background-color: white;
     color: #333;
-    font-size: 13px;
     outline: none;
+    font-size: 13px;
 }
+
+/* RESPONSIVE*/
 
 /*Tablettes*/
 @media (max-width: 1024px) {
 
-    #m-img {
-        justify-content: space-evenly;
+    *, *::before, *::after {
+        box-sizing: border-box;
     }
 
-    .controle,
-    #zone-zone-image,
-    #zone-image {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #Affichage {
+        padding: 15px;
+        min-width: 0;
+    }
+
+    #m-img {
+        flex-wrap: wrap;
+    }
+
+    .controle {
+        width: 100%;
         max-width: 440px;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    #zone-zone-image {
+        width: 100%;
+        max-width: 440px;
+        height: auto;
+    }
+
+    #zone-image {
+        width: 100%;
+        max-width: 440px;
+        aspect-ratio: 480 / 310;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .layer-img {
+        max-width: 100%;
+    }
+
+    .dataTables_wrapper {
+        overflow-x: auto;
     }
 
     #Statistiques {
-        justify-content: center !important;
+        justify-content: center;
     }
 }
 
-/*Petits Tablettes*/
+/*Petites tablettes*/
 @media (max-width: 768px) {
 
     header h1 {
         font-size: clamp(18px, 5vw, 26px);
     }
 
-    /* La barre latérale devient une barre d'onglets horizontale */
+    /* Le menu latéral devient une barre d'onglets horizontale défilante */
     #Conteneur {
         flex-direction: column;
     }
@@ -582,6 +523,7 @@ footer {
     }
 
     ul {
+        display: flex;
         flex-direction: row;
         width: max-content;
         min-width: 100%;
@@ -590,7 +532,7 @@ footer {
     nav li {
         border-radius: 10px 10px 0 0;
         padding: 10px 14px;
-        text-align: center;
+        white-space: nowrap;
     }
 
     #ZoneA {
@@ -598,7 +540,7 @@ footer {
     }
 
     #Eq1, #Eq2, #Eq3 {
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
     #resultat {
@@ -615,11 +557,11 @@ footer {
     }
 
     #Statistiques {
-        gap: 20px !important;
+        gap: 20px;
     }
 }
 
-/*Telephones*/
+/*Téléphones*/
 @media (max-width: 600px) {
 
     header {
@@ -628,6 +570,7 @@ footer {
 
     footer {
         font-size: 15px;
+        padding: 8px;
     }
 
     #Affichage {
@@ -701,13 +644,13 @@ footer {
     }
 
     #Statistiques {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 16px !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
 }
 
-/* Petits telephones */
+/*Petits téléphones*/
 @media (max-width: 400px) {
 
     ul {
