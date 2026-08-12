@@ -1,0 +1,743 @@
+/*POLICES*/
+@font-face {
+    font-family: 'font2';
+    src: url('Fonts/font2.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*RESET/BASE*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'font2', sans-serif;
+    background-color: #ffffff;
+    color: #0c0c0c;
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/*STRUCTURE GENERALE*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: #AEDFF7;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#Conteneur {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #AEDFF7;
+    flex-shrink: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav li {
+    cursor: pointer;
+    border-radius: 12px 0 0 12px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+    padding: 8px 16px;
+    white-space: nowrap;
+}
+
+nav li:hover {
+    background-color: #ffffff;
+    text-decoration: underline;
+    scale: 1.008;
+}
+
+nav li.active {
+    background-color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#Affichage {
+    display: flex;
+    background-color: #ffffff;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    min-width: 0;
+    width: 100%;
+}
+
+#Affichage h2 {
+    color: #247BA0;
+}
+
+#ZoneA {
+    font-size: 30px;
+    color: #247BA0;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    border: 2px solid black;
+    font-size: 20px;
+    text-align: center;
+    background-color: #AEDFF7;
+    justify-content: center;
+    padding: 8px;
+}
+
+/*CRAMERS*/
+#Conteneur1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+}
+
+#titre {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+}
+
+#Resolution {
+    margin: 20px 0 5px 0;
+    text-align: center;
+}
+
+#Formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#Formulaire label {
+    font-size: 21px;
+    font-weight: 600;
+    color: #010101;
+}
+
+#Formulaire input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#Formulaire input:hover {
+    background-color: #ffffff;
+    border-color: #5959c5;
+}
+
+#Formulaire input:focus {
+    background-color: #ffffff;
+    border-color: #247BA0;
+    box-shadow: 0 0 0 4px rgba(81, 84, 170, 0.15);
+}
+
+#Eq1, #Eq2, #Eq3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#Eq1 label, #Eq2 label, #Eq3 label {
+    flex-shrink: 0;
+}
+
+#Eq1 input, #Eq2 input, #Eq3 input {
+    flex: 1 1 90px;
+    min-width: 70px;
+}
+
+#RESOUDRE {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #AEDFF7;
+    height: 28px;
+    width: 80px;
+    border-radius: 12px;
+    margin-top: 8px;
+    border-color: #a8b9ea;
+    user-select: none;
+}
+
+#resultat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 50px;
+    justify-content: center;
+}
+
+#X1, #X2, #X3 {
+    margin: 0;
+    list-style: none;
+}
+
+/*IMAGES*/
+#Conteneur2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#Redim-img {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#m-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.controle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px;
+}
+
+.slider {
+    margin: 10px 0 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+.slider .ui-slider-range {
+    background: #339bcf;
+}
+
+.slider .ui-slider-handle.ui-state-default {
+    border-radius: 30%;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.slider .ui-slider-handle:active {
+    background-color: #ffffff;
+    border-color: #58a1c5;
+}
+
+#btn-fichier {
+    user-select: none;
+}
+
+#btn-fichier:hover {
+    scale: 1.03;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#zone-zone-image {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: grid;
+    place-content: center;
+}
+
+#zone-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 480 / 310;
+    height: auto;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+#zone-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#image {
+    display: none;
+}
+
+/*PANNEAU*/
+.panel-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.ad-panel {
+    position: relative;
+    max-width: 100%;
+}
+
+.ad-layer {
+    will-change: transform, opacity;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.panel-page h2 {
+    color: #247BA0;
+    text-align: center;
+}
+
+.layer-img {
+    width: 320px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    display: block;
+}
+
+.layer-label {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.resize-controls h3 {
+    margin: 0 0 8px 0;
+    color: #247BA0;
+}
+
+.resize-controls label {
+    font-weight: 600;
+    display: block;
+}
+
+.resize-preview {
+    min-height: 320px;
+}
+
+#resizeCanvas {
+    background: #fff;
+    border-radius: 6px;
+    border: 1px dashed #ddd;
+}
+
+#resizeLayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#startPan,
+#stopPan {
+    padding: 10px 20px;
+    border: 2px solid #339bcf;
+    border-radius: 8px;
+    background-color: white;
+    color: #339bcf;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#startPan:hover,
+#stopPan:hover {
+    background-color: #AEDFF7;
+    color: white;
+}
+
+#startPan:active,
+#stopPan:active {
+    background-color: #339bcf;
+    color: white;
+}
+
+#intervalMs {
+    width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    border: 2px solid #339bcf;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    cursor: text;
+}
+
+#intervalMs:hover {
+    border-color: #267fa9;
+}
+
+#intervalMs:focus {
+    border-color: #339bcf;
+    box-shadow: 0 0 0 3px rgba(51, 155, 207, 0.2);
+}
+
+/*DATATABLE*/
+#Conteneur4 {
+    width: 100%;
+    padding-left: 15px;
+}
+
+#tableProduits {
+    width: 100%;
+}
+
+#tableProduits thead th {
+    background-color: #247BA0;
+    color: #ffffff;
+}
+
+#tableProduits tfoot th {
+    background-color: #AEDFF7;
+    color: #0c0c0c;
+}
+
+#tableProduits tbody tr:nth-child(odd) {
+    background-color: #f0f8ff;
+}
+
+#tableProduits tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.dataTables_wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#btnAjouter {
+    cursor: pointer;
+    background-color: #AEDFF7;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+#btnAjouter:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+#selectDesignation {
+    width: 150px;
+    height: 25px;
+    border: 2px solid #339bcf;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+#selectDesignation:hover {
+    border-color: #267fa9;
+}
+
+#selectDesignation:focus {
+    border-color: #339bcf;
+    box-shadow: 0 0 0 3px rgba(51, 155, 207, 0.2);
+}
+
+#selectDesignation option:checked {
+    background: #339bcf;
+    color: white;
+}
+
+#inputQuantite, #inputPrix {
+    width: 150px;
+    height: 20px;
+    border: 2px solid #339bcf;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 13px;
+    outline: none;
+}
+
+#inputQuantite:hover, #inputPrix:hover {
+    border-color: #267fa9;
+}
+
+#inputQuantite:focus, #inputPrix:focus {
+    border-color: #339bcf;
+    box-shadow: 0 0 0 3px rgba(51, 155, 207, 0.2);
+}
+
+.dt-input {
+    width: 150px;
+    height: 25px;
+    border: 2px solid #339bcf;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 13px;
+    outline: none;
+}
+
+/*Tablettes*/
+@media (max-width: 1024px) {
+
+    #m-img {
+        justify-content: space-evenly;
+    }
+
+    .controle,
+    #zone-zone-image,
+    #zone-image {
+        max-width: 440px;
+    }
+
+    #Statistiques {
+        justify-content: center !important;
+    }
+}
+
+/*Petits Tablettes*/
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: clamp(18px, 5vw, 26px);
+    }
+
+    /* La barre latérale devient une barre d'onglets horizontale */
+    #Conteneur {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    ul {
+        flex-direction: row;
+        width: max-content;
+        min-width: 100%;
+    }
+
+    nav li {
+        border-radius: 10px 10px 0 0;
+        padding: 10px 14px;
+        text-align: center;
+    }
+
+    #ZoneA {
+        font-size: 24px;
+    }
+
+    #Eq1, #Eq2, #Eq3 {
+        justify-content: center;
+    }
+
+    #resultat {
+        gap: 20px;
+    }
+
+    .layer-label {
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+
+    #Conteneur4 {
+        padding-left: 0;
+    }
+
+    #Statistiques {
+        gap: 20px !important;
+    }
+}
+
+/*Telephones*/
+@media (max-width: 600px) {
+
+    header {
+        padding: 8px 10px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+
+    #Affichage {
+        padding: 10px;
+    }
+
+    /* Formulaire Cramer : un champ par ligne */
+    #Eq1, #Eq2, #Eq3 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    #Eq1 input, #Eq2 input, #Eq3 input {
+        width: 100%;
+    }
+
+    #resultat {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Outil image : panneau de contrôle au-dessus de l'aperçu */
+    #m-img {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controle {
+        margin: 10px 0;
+    }
+
+    #Redim-img {
+        margin-top: 25px;
+    }
+
+    /* Panneau publicitaire */
+    .ad-panel {
+        height: auto !important;
+        aspect-ratio: 3 / 2;
+        width: 100% !important;
+        max-width: 380px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .layer-img {
+        width: 85%;
+        height: auto;
+        aspect-ratio: 8 / 5;
+    }
+
+    .panel-controls label {
+        margin-left: 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Datatable */
+    #FormAjout {
+        justify-content: center !important;
+    }
+
+    #selectDesignation,
+    #inputQuantite,
+    #inputPrix,
+    .dt-input {
+        width: 130px;
+    }
+
+    #Statistiques {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+}
+
+/* Petits telephones */
+@media (max-width: 400px) {
+
+    ul {
+        font-size: 16px;
+    }
+
+    nav li {
+        padding: 8px 10px;
+    }
+
+    #ZoneA {
+        font-size: 20px;
+    }
+
+    #Formulaire label {
+        font-size: 17px;
+    }
+
+    #selectDesignation,
+    #inputQuantite,
+    #inputPrix,
+    .dt-input {
+        width: 100%;
+    }
+
+    #FormAjout label {
+        width: 100%;
+    }
+
+    .resize-preview {
+        min-height: 200px;
+    }
+}
